@@ -1,5 +1,7 @@
 const USER_EMAIL = 'USER_EMAIL';
 const SAVED_COINS = 'SAVE_COINS';
+const SAVE_FORM = 'SAVE_FORM';
+
 const setEmail = (payload) => ({
   type: USER_EMAIL,
   payload,
@@ -11,5 +13,10 @@ const saveCoins = (payload) => ({
 
 const fetchAPI = () => fetch('https://economia.awesomeapi.com.br/json/all').then((response) => response.json());
 
-export { fetchAPI,
-  saveCoins, setEmail, USER_EMAIL, SAVED_COINS };
+const saveFormData = (payload) => ({
+  type: SAVE_FORM,
+  payload,
+});
+
+export { saveFormData, fetchAPI,
+  saveCoins, setEmail, USER_EMAIL, SAVED_COINS, SAVE_FORM };
