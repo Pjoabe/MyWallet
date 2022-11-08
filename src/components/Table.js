@@ -54,8 +54,8 @@ class Table extends Component {
     );
   }
 }
-const mapStateToProps = (state) => ({
-  Expenses: state.wallet.expenses,
+const mapStateToProps = ({ wallet: { expenses } }) => ({
+  Expenses: expenses,
 });
 
 Table.propTypes = {
